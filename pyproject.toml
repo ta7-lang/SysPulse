@@ -1,0 +1,27 @@
+[project]
+name = "syspulse"
+version = "1.0.0"
+description = "Офлайн-монитор и оптимизатор Windows в стиле MSI Afterburner"
+requires-python = ">=3.10"
+
+[tool.ruff]
+line-length = 125
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "B", "I", "UP", "SIM", "PL"]
+ignore = ["PLR0911", "PLR0912", "PLR0913", "PLR0915", "PLR2004", "PLW0603", "PLC0415", "SIM105", "SIM108",
+          "E501", "B023", "UP040", "PLW2901", "PLR0917", "PLW0108", "PLR0914", "PLR6301"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["syspulse"]
+
+[tool.pyright]
+include = ["syspulse", "main.py", "tests"]
+pythonPlatform = "Windows"
+pythonVersion = "3.12"
+typeCheckingMode = "basic"
+reportMissingModuleSource = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
